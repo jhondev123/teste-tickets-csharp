@@ -18,8 +18,7 @@ namespace estudo.Mappers
                 employee.Cpf.GetCpfFormated(),
                 employee.Situation.ToString(),
                 employee.CreatedAt,
-                employee.UpdatedAt,
-                employee.DeletedAt
+                employee.UpdatedAt
             );
         }
         public static List<EmployeeDto> GetDtoByModel(List<Employee> employees)

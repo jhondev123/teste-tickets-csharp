@@ -22,6 +22,7 @@ namespace estudo.Repositories
         }
         public bool StoreEmployee(Employee employee)
         {
+            employee.CreatedAt = DateTime.Now;
             _context.Employees.Add(employee);
             _context.SaveChanges();
             return true;

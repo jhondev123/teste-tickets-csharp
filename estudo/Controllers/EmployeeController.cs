@@ -12,17 +12,16 @@ namespace estudo.Controllers
 {
     public class EmployeeController
     {
-        private readonly EmployeeRepository employeeRepository;
+        private readonly EmployeeRepository _employeeRepository;
         public EmployeeController(EmployeeRepository employeeRepository)
         {
-            this.employeeRepository = employeeRepository;
+            _employeeRepository = employeeRepository;
         }
 
         public List<EmployeeDto>SearchAllEmployees()
         {
-            List<Employee> employees = this.employeeRepository.GetAllEmployees().ToList();
+            List<Employee> employees = _employeeRepository.GetAllEmployees().ToList();
             return EmployeeMapper.GetDtoByModel(employees);
-
         }
 
     }

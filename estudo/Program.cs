@@ -2,16 +2,16 @@ using estudo.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using estudo.Views.Employees;
 using estudo.Controllers;
 using System;
 using estudo.Repositories;
+using estudo.Views.Employee;
 
 namespace estudo
 {
     public class Program
     {
-        private static IServiceProvider serviceProvider;
+        public static IServiceProvider serviceProvider;
 
         /// <summary>
         ///  The main entry point for the application.
@@ -40,6 +40,7 @@ namespace estudo
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<EmployeeController>();
             services.AddTransient<SearchEmployeesView>();
+            services.AddTransient<FrmStoreOrEditView>();
 
         }
     }

@@ -8,30 +8,27 @@ namespace estudo.Dto
 {
     public class EmployeeDto
     {
-        public int id;
-        public string name;
-        public string cpf;
-        public string situation;
-        public DateTime createdAt;
-        public DateTime updatedAt;
-        public DateTime deletedAt;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Cpf { get; set; }
+        public string Situation { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public EmployeeDto(
             int id,
             string name,
             string cpf,
             string situation,
-            DateTime createdAt,
-            DateTime updatedAt,
-            DateTime deletedAt
-        ) 
+            DateTime? createdAt,
+            DateTime? updatedAt
+        )
         {
-            this.id = id;
-            this.name = name;
-            this.cpf = cpf;
-            this.situation = situation;
-            this.createdAt = createdAt;
-            this.updatedAt = updatedAt;
-            this.deletedAt = deletedAt;
+            Id = id;
+            Name = name;
+            Cpf = cpf;
+            Situation = situation;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
 
         }
     }

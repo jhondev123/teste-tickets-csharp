@@ -1,6 +1,5 @@
 ﻿using estudo.Controllers;
 using estudo.Dto;
-using estudo.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -12,34 +11,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace estudo.Views.Employees
+namespace estudo.Views.Employee
 {
     public partial class SearchEmployeesView : Form
     {
         private readonly EmployeeController _employeeController;
-        private List<EmployeeDto> employees;
+        private List<EmployeeDto> employeesDto;
         public SearchEmployeesView(EmployeeController employeeController)
         {
-            _employeeController = employeeController;
+
             InitializeComponent();
-
+            _employeeController = employeeController;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
         private void SearchEmployeesView_Load(object sender, EventArgs e)
         {
             LoadEmployees();
+
         }
-   
+
         private void LoadEmployees()
         {
-            employees = _employeeController.SearchAllEmployees();
+            employeesDto = _employeeController.SearchAllEmployees();
+            dgvEmployees.DataSource = employeesDto;
 
-            grid_employees.DataSource = employees;
+        }
+        private void mountGrid()
+        {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmStoreOrEditView frmStoreOrEditView = Program.serviceProvider.GetRequiredService<FrmStoreOrEditView>();
+            frmStoreOrEditView.ShowDialog();
         }
     }
 }
