@@ -32,14 +32,14 @@ namespace estudo
 
             ApplicationConfiguration.Initialize();
 
-            var form = serviceProvider.GetRequiredService<SearchEmployeesView>();
+            var form = serviceProvider.GetRequiredService<FrmSearchEmployeesView>();
             Application.Run(form);
         }
         private static void ConfigureServices(ServiceCollection services)
         {
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<EmployeeController>();
-            services.AddTransient<SearchEmployeesView>();
+            services.AddTransient<FrmSearchEmployeesView>();
             services.AddTransient<FrmStoreOrEditView>();
 
         }

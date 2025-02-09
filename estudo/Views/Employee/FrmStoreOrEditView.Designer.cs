@@ -28,139 +28,225 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            txtNome = new TextBox();
-            lblNome = new Label();
-            panel2 = new Panel();
+            pnPrincipal = new Panel();
+            pnForm = new Panel();
+            pnRow1 = new Panel();
+            pnCpf = new Panel();
             txtCpf = new TextBox();
             lblCpf = new Label();
-            panel3 = new Panel();
+            pnNome = new Panel();
+            txtNome = new TextBox();
+            lblNome = new Label();
+            pnRow2 = new Panel();
+            pnSituacao = new Panel();
             cbxSituacao = new ComboBox();
             lblSituacao = new Label();
-            btnCadastrarOrEdit = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            pnButtons = new Panel();
+            btnCancelar = new Button();
+            btnSalvar = new Button();
+            pnPrincipal.SuspendLayout();
+            pnForm.SuspendLayout();
+            pnRow1.SuspendLayout();
+            pnCpf.SuspendLayout();
+            pnNome.SuspendLayout();
+            pnRow2.SuspendLayout();
+            pnSituacao.SuspendLayout();
+            pnButtons.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnPrincipal
             // 
-            panel1.Controls.Add(txtNome);
-            panel1.Controls.Add(lblNome);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(373, 83);
-            panel1.TabIndex = 0;
+            pnPrincipal.Controls.Add(pnForm);
+            pnPrincipal.Controls.Add(pnButtons);
+            pnPrincipal.Dock = DockStyle.Fill;
+            pnPrincipal.Location = new Point(0, 0);
+            pnPrincipal.Name = "pnPrincipal";
+            pnPrincipal.Size = new Size(784, 461);
+            pnPrincipal.TabIndex = 0;
             // 
-            // txtNome
+            // pnForm
             // 
-            txtNome.Location = new Point(10, 32);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(349, 23);
-            txtNome.TabIndex = 1;
+            pnForm.Controls.Add(pnRow1);
+            pnForm.Controls.Add(pnRow2);
+            pnForm.Location = new Point(0, 0);
+            pnForm.Name = "pnForm";
+            pnForm.Size = new Size(784, 390);
+            pnForm.TabIndex = 0;
             // 
-            // lblNome
+            // pnRow1
             // 
-            lblNome.AutoSize = true;
-            lblNome.Location = new Point(10, 14);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new Size(40, 15);
-            lblNome.TabIndex = 0;
-            lblNome.Text = "Nome";
+            pnRow1.Controls.Add(pnCpf);
+            pnRow1.Controls.Add(pnNome);
+            pnRow1.Location = new Point(0, 0);
+            pnRow1.Name = "pnRow1";
+            pnRow1.Size = new Size(784, 100);
+            pnRow1.TabIndex = 0;
             // 
-            // panel2
+            // pnCpf
             // 
-            panel2.Controls.Add(txtCpf);
-            panel2.Controls.Add(lblCpf);
-            panel2.Location = new Point(405, 12);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(373, 83);
-            panel2.TabIndex = 1;
+            pnCpf.Controls.Add(txtCpf);
+            pnCpf.Controls.Add(lblCpf);
+            pnCpf.Dock = DockStyle.Left;
+            pnCpf.Location = new Point(376, 0);
+            pnCpf.Name = "pnCpf";
+            pnCpf.Size = new Size(408, 100);
+            pnCpf.TabIndex = 1;
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(10, 32);
+            txtCpf.Location = new Point(12, 27);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(349, 23);
+            txtCpf.Size = new Size(344, 23);
             txtCpf.TabIndex = 1;
             // 
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(10, 14);
+            lblCpf.Location = new Point(12, 9);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(26, 15);
             lblCpf.TabIndex = 0;
             lblCpf.Text = "Cpf";
             // 
-            // panel3
+            // pnNome
             // 
-            panel3.Controls.Add(cbxSituacao);
-            panel3.Controls.Add(lblSituacao);
-            panel3.Location = new Point(12, 115);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(373, 83);
-            panel3.TabIndex = 2;
+            pnNome.Controls.Add(txtNome);
+            pnNome.Controls.Add(lblNome);
+            pnNome.Dock = DockStyle.Left;
+            pnNome.Location = new Point(0, 0);
+            pnNome.Name = "pnNome";
+            pnNome.Size = new Size(376, 100);
+            pnNome.TabIndex = 0;
+            // 
+            // txtNome
+            // 
+            txtNome.Location = new Point(12, 27);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(344, 23);
+            txtNome.TabIndex = 1;
+            // 
+            // lblNome
+            // 
+            lblNome.AutoSize = true;
+            lblNome.Location = new Point(12, 9);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(40, 15);
+            lblNome.TabIndex = 0;
+            lblNome.Text = "Nome";
+            // 
+            // pnRow2
+            // 
+            pnRow2.Controls.Add(pnSituacao);
+            pnRow2.Location = new Point(0, 100);
+            pnRow2.Name = "pnRow2";
+            pnRow2.Size = new Size(784, 96);
+            pnRow2.TabIndex = 1;
+            // 
+            // pnSituacao
+            // 
+            pnSituacao.Controls.Add(cbxSituacao);
+            pnSituacao.Controls.Add(lblSituacao);
+            pnSituacao.Dock = DockStyle.Left;
+            pnSituacao.Location = new Point(0, 0);
+            pnSituacao.Name = "pnSituacao";
+            pnSituacao.Size = new Size(784, 96);
+            pnSituacao.TabIndex = 1;
             // 
             // cbxSituacao
             // 
             cbxSituacao.FormattingEnabled = true;
-            cbxSituacao.Location = new Point(10, 41);
+            cbxSituacao.Location = new Point(12, 27);
             cbxSituacao.Name = "cbxSituacao";
-            cbxSituacao.Size = new Size(349, 23);
+            cbxSituacao.Size = new Size(344, 23);
             cbxSituacao.TabIndex = 1;
             // 
             // lblSituacao
             // 
             lblSituacao.AutoSize = true;
-            lblSituacao.Location = new Point(10, 14);
+            lblSituacao.Location = new Point(12, 9);
             lblSituacao.Name = "lblSituacao";
             lblSituacao.Size = new Size(52, 15);
             lblSituacao.TabIndex = 0;
             lblSituacao.Text = "Situação";
             // 
-            // btnCadastrarOrEdit
+            // pnButtons
             // 
-            btnCadastrarOrEdit.Location = new Point(408, 364);
-            btnCadastrarOrEdit.Name = "btnCadastrarOrEdit";
-            btnCadastrarOrEdit.Size = new Size(75, 23);
-            btnCadastrarOrEdit.TabIndex = 3;
-            btnCadastrarOrEdit.Text = "Cadastrar";
-            btnCadastrarOrEdit.UseVisualStyleBackColor = true;
-            btnCadastrarOrEdit.Click += btnCadastrarOrEdit_Click;
+            pnButtons.Controls.Add(btnCancelar);
+            pnButtons.Controls.Add(btnSalvar);
+            pnButtons.Location = new Point(0, 388);
+            pnButtons.Name = "pnButtons";
+            pnButtons.Size = new Size(784, 73);
+            pnButtons.TabIndex = 1;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.FromArgb(192, 0, 0);
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.ForeColor = Color.Transparent;
+            btnCancelar.Location = new Point(540, 30);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(113, 31);
+            btnCancelar.TabIndex = 1;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.BackColor = Color.FromArgb(0, 192, 0);
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.ForeColor = Color.Transparent;
+            btnSalvar.Location = new Point(659, 30);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(113, 31);
+            btnSalvar.TabIndex = 0;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // FrmStoreOrEditView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnCadastrarOrEdit);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            ClientSize = new Size(784, 461);
+            Controls.Add(pnPrincipal);
             Name = "FrmStoreOrEditView";
             Text = "FrmStoreOrEditView";
             Load += FrmStoreOrEditView_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            pnPrincipal.ResumeLayout(false);
+            pnForm.ResumeLayout(false);
+            pnRow1.ResumeLayout(false);
+            pnCpf.ResumeLayout(false);
+            pnCpf.PerformLayout();
+            pnNome.ResumeLayout(false);
+            pnNome.PerformLayout();
+            pnRow2.ResumeLayout(false);
+            pnSituacao.ResumeLayout(false);
+            pnSituacao.PerformLayout();
+            pnButtons.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private TextBox txtNome;
-        private Label lblNome;
-        private Panel panel2;
-        private TextBox txtCpf;
-        private Label lblCpf;
         private Panel panel3;
-        private ComboBox cbxSituacao;
         private Label lblSituacao;
         private Button btnCadastrarOrEdit;
+        private Panel panel2;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Panel pnPrincipal;
+        private Panel pnForm;
+        private Panel pnRow1;
+        private Panel pnNome;
+        private TextBox txtNome;
+        private Label lblNome;
+        private Panel pnCpf;
+        private TextBox txtCpf;
+        private Label lblCpf;
+        private Panel pnRow2;
+        private Panel pnSituacao;
+        private ComboBox cbxSituacao;
+        private Panel pnButtons;
+        private Button btnSalvar;
+        private Button btnCancelar;
     }
 }

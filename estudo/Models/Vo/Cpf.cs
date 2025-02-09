@@ -1,4 +1,5 @@
-﻿using System;
+﻿using estudo.Exceptions.Models.Employee;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,15 @@ namespace estudo.Models.Vo
             cpf = RemoveSpecialCharts(cpf);
             if (!Validate(cpf)) 
             {
-                throw new ArgumentException("Cpf Inválido");
+                throw new InvalidCpfException("Cpf Inválido");
             }
             Value = cpf;       
         }
         public bool Validate(string cpf)
         {
+            if(cpf.Length != 11)
+                return false;
+            
             return true;
         }
 
@@ -40,6 +44,11 @@ namespace estudo.Models.Vo
         {
             return Regex.Replace(Text, "[^0-9]", "");
         }
+        public override string ToString()
+        {
+            return Value;
+        }
+
 
     }
 }

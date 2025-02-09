@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace estudo.Views.Employee
 {
-    public partial class SearchEmployeesView : Form
+    public partial class FrmSearchEmployeesView : Form
     {
         private readonly EmployeeController _employeeController;
         private List<EmployeeDto> employeesDto;
-        public SearchEmployeesView(EmployeeController employeeController)
+        public FrmSearchEmployeesView(EmployeeController employeeController)
         {
 
             InitializeComponent();
@@ -36,15 +36,12 @@ namespace estudo.Views.Employee
             dgvEmployees.DataSource = employeesDto;
 
         }
-        private void mountGrid()
-        {
-
-        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FrmStoreOrEditView frmStoreOrEditView = Program.serviceProvider.GetRequiredService<FrmStoreOrEditView>();
+            FrmStoreOrEditView frmStoreOrEditView = new FrmStoreOrEditView(null);
             frmStoreOrEditView.ShowDialog();
+            LoadEmployees();
         }
     }
 }

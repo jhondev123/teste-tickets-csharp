@@ -1,6 +1,6 @@
 ﻿namespace estudo.Views.Employee
 {
-    partial class SearchEmployeesView
+    partial class FrmSearchEmployeesView
     {
         /// <summary>
         /// Required designer variable.

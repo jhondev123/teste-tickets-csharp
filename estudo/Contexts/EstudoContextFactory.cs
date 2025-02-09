@@ -13,7 +13,5 @@ namespace estudo.Contexts
                 "Host=localhost;Database=estudo;Username=pgsql;Password=pgsql;");
             return new EstudoContext(optionsBuilder.Options);
         }
-
-   
     }
 }
