@@ -44,7 +44,7 @@ namespace estudo.Controllers
         }
         public bool UpdateEmployee(Employee employee)
         {
-            if (VerifyAlreadyExistsEmployee(employee.Cpf))
+            if (VerifyAlreadyExistsEmployee(employee.Cpf,true,employee.Id))
             {
                 throw new AlreadyExistsCpf();
             }
@@ -55,9 +55,14 @@ namespace estudo.Controllers
         {
             return _employeeRepository.DeleteEmployee(id);
         }
-        private bool VerifyAlreadyExistsEmployee(Cpf cpf)
+        private bool VerifyAlreadyExistsEmployee(Cpf cpf,bool isEdit = false, int? employeeId = null)
         {
             Employee employee = _employeeRepository.GetEmployeeByCpf(cpf);
+            
+            if(isEdit && employee.Cpf.Value == cpf.Value && employeeId == employee.Id)
+            {
+                return false;
+            }
             return employee != null;
         }
     }

@@ -21,6 +21,7 @@ namespace estudo.Views.Employee
     {
         private bool IsEdit = false;
         private int? _IdEmployee;
+        private estudo.Models.Employee? employee;
         private EmployeeController _employeeController;
         public FrmStoreOrEditView(int? IdEmployee)
         {
@@ -30,6 +31,9 @@ namespace estudo.Views.Employee
             {
                 IsEdit = true;
                 _IdEmployee = IdEmployee;
+                employee = _employeeController.getEmployeeById(IdEmployee.Value);
+                mountData(employee);
+
             }
         }
 
@@ -60,21 +64,24 @@ namespace estudo.Views.Employee
 
             try
             {
-
-                estudo.Models.Employee employee = new estudo.Models.Employee
-                {
-                    Cpf = new Cpf(txtCpf.Text),
-                    Name = txtNome.Text,
-                    Situation = (EmployeeSituationEnum)cbxSituacao.SelectedIndex
-                };
                 if (IsEdit)
                 {
+                    
                     employee.Id = _IdEmployee.Value;
+                    employee.Name = txtNome.Text;
+                    employee.Cpf = new Cpf(txtCpf.Text);
+                    employee.Situation = (EmployeeSituationEnum)cbxSituacao.SelectedValue;
                     _employeeController.UpdateEmployee(employee);
                     MessageBox.Show("Funcionário atualizado com sucesso");
                 }
                 else
                 {
+                    estudo.Models.Employee employee = new estudo.Models.Employee
+                    {
+                        Cpf = new Cpf(txtCpf.Text),
+                        Name = txtNome.Text,
+                        Situation = (EmployeeSituationEnum)cbxSituacao.SelectedValue
+                    };
                     _employeeController.StoreEmployee(employee);
                     MessageBox.Show("Funcionário cadastrado com sucesso");
                 }
@@ -91,6 +98,10 @@ namespace estudo.Views.Employee
                 MessageBox.Show(ex.Message);
                 txtCpf.Focus();
             }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Ocorreu um erro ao salvar o funcionário");
+            //}
         }
         private void mountSituation()
         {
@@ -142,6 +153,12 @@ namespace estudo.Views.Employee
             }
             return true;
 
+        }
+        private void mountData(estudo.Models.Employee employee)
+        {
+            txtNome.Text = employee.Name;
+            txtCpf.Text = employee.Cpf.ToString();
+            cbxSituacao.SelectedValue = (int)employee.Situation;
         }
     }
 }

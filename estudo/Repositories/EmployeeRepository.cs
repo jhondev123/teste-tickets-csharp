@@ -46,7 +46,7 @@ namespace estudo.Repositories
         public bool DeleteEmployee(int id)
         {
             Employee employee = _context.Employees.Find(id);
-            employee.DeletedAt = DateTime.Now;
+            employee.DeletedAt = DateTime.UtcNow;
             _context.Employees.Update(employee);
             _context.SaveChanges();
             return true;
