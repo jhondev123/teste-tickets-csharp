@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace estudo.Views.Employee
 {
-    public partial class FrmSearchEmployeesView : Form
+    public partial class FrmSearchEmployeesView : FrmBase
     {
         private readonly EmployeeController _employeeController;
         private List<EmployeeDto> employeesDto;

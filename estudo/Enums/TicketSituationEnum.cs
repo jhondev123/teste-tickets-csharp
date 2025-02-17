@@ -8,7 +8,7 @@ namespace estudo.Enums
 {
     public enum TicketSituationEnum
     {
-        Inactive = 0,
-        Active = 1
+        Inactive = 'I',
+        Active = 'A'
     }
 }
