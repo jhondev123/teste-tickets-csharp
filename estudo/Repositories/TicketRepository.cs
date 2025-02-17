@@ -53,5 +53,12 @@ namespace estudo.Repositories
             _context.SaveChanges();
             return true;
         }
+        public bool UpdateTicket(Models.Ticket ticket)
+        {
+            ticket.UpdatedAt = DateTime.UtcNow;
+            _context.Ticket.Update(ticket);
+            _context.SaveChanges();
+            return true;
+        } 
     }
 }
