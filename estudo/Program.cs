@@ -6,6 +6,7 @@ using estudo.Controllers;
 using System;
 using estudo.Repositories;
 using estudo.Views.Employee;
+using estudo.Views.Ticket;
 
 namespace estudo
 {
@@ -41,6 +42,9 @@ namespace estudo
             services.AddScoped<EmployeeController>();
             services.AddTransient<FrmSearchEmployeesView>();
             services.AddTransient<FrmStoreOrEditView>();
+            services.AddTransient<TicketRepository>();
+            services.AddTransient<TicketController>();
+            services.AddTransient<FrmSearchTicketsView>();
 
         }
     }

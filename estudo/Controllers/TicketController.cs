@@ -1,4 +1,5 @@
-﻿using estudo.Enums;
+﻿using estudo.Dto.Search.Tickets;
+using estudo.Enums;
 using estudo.Repositories;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
@@ -17,13 +18,10 @@ namespace estudo.Controllers
             _ticketRepository = ticketRepository ?? throw new ArgumentNullException(nameof(ticketRepository));
         }
         public IEnumerable<Models.Ticket> SearchTickets(
-            DateTime? startDate = null,
-            DateTime? endDate = null,
-            TicketSituationEnum? situation = null,
-            string? slug = null
+            TicketSearchDto dto
         )
         {
-            return _ticketRepository.SearchTickets(startDate, endDate, situation, slug);
+            return _ticketRepository.SearchTickets(dto);
         }
         public IEnumerable<Models.Ticket> GetAllTickets()
         {

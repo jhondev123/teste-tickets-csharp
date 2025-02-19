@@ -1,4 +1,5 @@
 ﻿using estudo.Contexts;
+using estudo.Dto.Search.Tickets;
 using estudo.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,21 +19,18 @@ namespace estudo.Repositories
 
         }
         public IEnumerable<Models.Ticket> SearchTickets(
-            DateTime? startDate = null,
-            DateTime? endDate = null,
-            TicketSituationEnum? situation = null,
-            string? slug = null
+            TicketSearchDto dto
         )
         {
             return _context.Ticket
               .Include(t => t.Employee)
               .Where(t =>
-                  (startDate == null || t.CreatedAt >= startDate) &&
-                  (endDate == null || t.CreatedAt <= endDate) &&
-                  (situation == null || t.Situation == situation) &&
-                  (slug == null ||
-                  t.Id.ToString().Contains(slug) ||
-                  t.Quantity.ToString().Contains(slug) || t.Employee.Name.Contains(slug)
+                  (dto.StartDate == null || t.CreatedAt >= dto.StartDate) &&
+                  (dto.EndDate == null || t.CreatedAt <= dto.EndDate) &&
+                  (dto.Situation == null || t.Situation == dto.Situation) &&
+                  (dto.Slug == null ||
+                  t.Id.ToString().Contains(dto.Slug) ||
+                  t.Quantity.ToString().Contains(dto.Slug) || t.Employee.Name.Contains(dto.Slug)
                   )
               )
               .ToList();

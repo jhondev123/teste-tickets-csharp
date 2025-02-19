@@ -12,8 +12,8 @@ using estudo.Contexts;
 namespace estudo.Migrations
 {
     [DbContext(typeof(EstudoContext))]
-    [Migration("20250208185815_fixing date inputs")]
-    partial class fixingdateinputs
+    [Migration("20250218001548_starting")]
+    partial class starting
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,7 +65,7 @@ namespace estudo.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("DeletedAt")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("DeliveryDatee")
@@ -80,7 +80,7 @@ namespace estudo.Migrations
                     b.Property<int>("Situation")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");

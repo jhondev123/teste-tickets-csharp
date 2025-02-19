@@ -43,15 +43,17 @@
             pnHeader.Controls.Add(btnTickets);
             pnHeader.Dock = DockStyle.Top;
             pnHeader.Location = new Point(0, 0);
+            pnHeader.Margin = new Padding(3, 4, 3, 4);
             pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(800, 55);
+            pnHeader.Size = new Size(914, 73);
             pnHeader.TabIndex = 0;
             // 
             // btnEmployees
             // 
-            btnEmployees.Location = new Point(169, 12);
+            btnEmployees.Location = new Point(193, 16);
+            btnEmployees.Margin = new Padding(3, 4, 3, 4);
             btnEmployees.Name = "btnEmployees";
-            btnEmployees.Size = new Size(75, 23);
+            btnEmployees.Size = new Size(86, 31);
             btnEmployees.TabIndex = 0;
             btnEmployees.Text = "Employees";
             btnEmployees.UseVisualStyleBackColor = true;
@@ -59,39 +61,43 @@
             // 
             // btnTickets
             // 
-            btnTickets.Location = new Point(509, 12);
+            btnTickets.Location = new Point(582, 16);
+            btnTickets.Margin = new Padding(3, 4, 3, 4);
             btnTickets.Name = "btnTickets";
-            btnTickets.Size = new Size(75, 23);
+            btnTickets.Size = new Size(86, 31);
             btnTickets.TabIndex = 1;
             btnTickets.Text = "Tickets";
             btnTickets.UseVisualStyleBackColor = true;
+            btnTickets.Click += btnTickets_Click;
             // 
             // pnFooter
             // 
             pnFooter.Controls.Add(lblFooter);
             pnFooter.Dock = DockStyle.Bottom;
-            pnFooter.Location = new Point(0, 459);
+            pnFooter.Location = new Point(0, 612);
+            pnFooter.Margin = new Padding(3, 4, 3, 4);
             pnFooter.Name = "pnFooter";
-            pnFooter.Size = new Size(800, 36);
+            pnFooter.Size = new Size(914, 48);
             pnFooter.TabIndex = 1;
             // 
             // lblFooter
             // 
             lblFooter.AutoSize = true;
-            lblFooter.Location = new Point(366, 12);
+            lblFooter.Location = new Point(418, 16);
             lblFooter.Name = "lblFooter";
-            lblFooter.Size = new Size(59, 15);
+            lblFooter.Size = new Size(73, 20);
             lblFooter.TabIndex = 0;
             lblFooter.Text = "Jhonattan";
             lblFooter.Click += lblFooter_Click;
             // 
             // FrmBase
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 495);
+            ClientSize = new Size(914, 660);
             Controls.Add(pnHeader);
             Controls.Add(pnFooter);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmBase";
             Text = "FrmBase";
             Load += FrmBase_Load;

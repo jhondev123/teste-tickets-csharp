@@ -1,4 +1,5 @@
 ﻿using estudo.Views.Employee;
+using estudo.Views.Ticket;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,23 @@ namespace estudo.Views
         private void lblFooter_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTickets_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is FrmSearchTicketsView)
+                {
+                    form.Activate();  // Traz a aba para frente
+                    return;
+                }
+            }
+
+            FrmSearchTicketsView formSearchTickets = Program.serviceProvider.
+                GetRequiredService<FrmSearchTicketsView>();
+
+            formSearchTickets.Show();
         }
     }
 }
