@@ -2,6 +2,7 @@
 using estudo.Dto.Search.Tickets;
 using estudo.Enums;
 using estudo.Repositories;
+using estudo.Views.Employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,6 +71,12 @@ namespace estudo.Views.Ticket
         private void dtpDataFinal_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmStoreOrEditTicket frm = new FrmStoreOrEditTicket(null);
+            frm.ShowDialog();
         }
     }
 }

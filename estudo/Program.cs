@@ -45,6 +45,8 @@ namespace estudo
             services.AddTransient<TicketRepository>();
             services.AddTransient<TicketController>();
             services.AddTransient<FrmSearchTicketsView>();
+            services.AddTransient<FrmStoreOrEditTicket>();
+
 
         }
     }

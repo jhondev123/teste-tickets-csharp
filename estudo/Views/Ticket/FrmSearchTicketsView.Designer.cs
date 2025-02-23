@@ -126,7 +126,6 @@
             lblSlug.Size = new Size(101, 15);
             lblSlug.TabIndex = 0;
             lblSlug.Text = "Pesquisa genérica";
-            
             // 
             // pnDataFinal
             // 
@@ -198,6 +197,7 @@
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Cadastrar Funcionário";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnGerarRelatorio
             // 
