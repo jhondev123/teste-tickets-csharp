@@ -58,6 +58,7 @@
             btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastrar Ticket";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // pnFuncionario
             // 

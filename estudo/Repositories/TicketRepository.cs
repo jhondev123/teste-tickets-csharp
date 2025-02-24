@@ -22,16 +22,16 @@ namespace estudo.Repositories
         {
             return _context.Ticket
                 .Include(t => t.Employee)
-                .Where(t =>
-                    (dto.StartDate == null || t.CreatedAt >= dto.StartDate.Value.ToUniversalTime()) &&
-                    (dto.EndDate == null || t.CreatedAt <= dto.EndDate.Value.ToUniversalTime()) &&
-                    (dto.Situation == null || t.Situation == dto.Situation) &&
-                    (dto.Slug == null ||
-                        t.Id.ToString().Contains(dto.Slug) ||
-                        t.Quantity.ToString().Contains(dto.Slug) ||
-                        t.Employee.Name.Contains(dto.Slug)
-                    )
-                )
+                //.Where(t =>
+                //    (dto.StartDate == null || t.CreatedAt >= dto.StartDate.Value.ToUniversalTime()) &&
+                //    (dto.EndDate == null || t.CreatedAt <= dto.EndDate.Value.ToUniversalTime()) &&
+                //    (dto.Situation == null || t.Situation == dto.Situation) &&
+                //    (dto.Slug == null ||
+                //        t.Id.ToString().Contains(dto.Slug) ||
+                //        t.Quantity.ToString().Contains(dto.Slug) ||
+                //        t.Employee.Name.Contains(dto.Slug)
+                //    )
+                //)
                 .ToList();
         }
         public IEnumerable<Models.Ticket> GetAllTickets()

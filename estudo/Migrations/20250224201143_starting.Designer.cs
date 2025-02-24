@@ -12,7 +12,7 @@ using estudo.Contexts;
 namespace estudo.Migrations
 {
     [DbContext(typeof(EstudoContext))]
-    [Migration("20250218001548_starting")]
+    [Migration("20250224201143_starting")]
     partial class starting
     {
         /// <inheritdoc />
@@ -68,7 +68,7 @@ namespace estudo.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("DeliveryDatee")
+                    b.Property<DateTime>("DeliveryDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("EmployeeId")

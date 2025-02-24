@@ -33,6 +33,8 @@ namespace estudo.Views.Ticket
         {
             GetFilters();
             var tickets = ticketController.SearchTickets(ticketSearchDto);
+            dgvTickets.Rows.Clear();
+            SetupDataGridViewColumns();
             foreach (var ticket in tickets)
             {
                 var row = new DataGridViewRow();
@@ -41,16 +43,32 @@ namespace estudo.Views.Ticket
                 row.Cells[1].Value = ticket.Quantity;
                 row.Cells[2].Value = ticket.Employee.Name;
                 row.Cells[3].Value = ticket.CreatedAt;
-                row.Cells[4].Value = ticket.Situation;
+                if(ticket.Situation == TicketSituationEnum.Active)
+                {
+                    row.Cells[4].Value = "Ativo";
+                }
+                else
+                {
+                    row.Cells[4].Value = "Inativo";
+                }
                 dgvTickets.Rows.Add(row);
             }
+        }
+        private void SetupDataGridViewColumns()
+        {
+            dgvTickets.Columns.Add("Id", "Id");
+            dgvTickets.Columns.Add("Quantity", "Quantidade");
+            dgvTickets.Columns.Add("Employee", "Funcionário");
+            dgvTickets.Columns.Add("CreatedAt", "Data de Criação");
+            dgvTickets.Columns.Add("Situation", "Situação");
         }
         private void GetFilters()
         {
             ticketSearchDto.Slug = txtSlug.Text;
             ticketSearchDto.StartDate = dtpDataInicio.Value;
             ticketSearchDto.EndDate = dtpDataFinal.Value;
-            ticketSearchDto.Situation = (TicketSituationEnum)cbxSituacao.SelectedValue;
+            var selectedSituation = (dynamic)cbxSituacao.SelectedItem;
+            ticketSearchDto.Situation = (TicketSituationEnum)selectedSituation.Value;
         }
         private void MountSituations()
         {
@@ -77,6 +95,7 @@ namespace estudo.Views.Ticket
         {
             FrmStoreOrEditTicket frm = new FrmStoreOrEditTicket(null);
             frm.ShowDialog();
+            SearchTickets();
         }
     }
 }

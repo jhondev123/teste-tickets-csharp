@@ -65,7 +65,7 @@ namespace estudo.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("DeliveryDatee")
+                    b.Property<DateTime>("DeliveryDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("EmployeeId")

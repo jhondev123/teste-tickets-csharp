@@ -13,10 +13,10 @@ namespace estudo.Models
         public Employee Employee { get; set; }
         public int Quantity { get; set; }
         public TicketSituationEnum Situation { get; set; }
-        public DateTime DeliveryDatee { get; set; }
+        public DateTime DeliveryDate { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; } = null;
+        public DateTime? DeletedAt { get; set; } = null;
 
     }
 }

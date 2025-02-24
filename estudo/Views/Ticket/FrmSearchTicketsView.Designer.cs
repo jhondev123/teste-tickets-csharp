@@ -148,7 +148,7 @@
             // 
             // dtpDataFinal
             // 
-            dtpDataFinal.Location = new Point(6, 39);
+            dtpDataFinal.Location = new Point(20, 39);
             dtpDataFinal.Margin = new Padding(3, 2, 3, 2);
             dtpDataFinal.Name = "dtpDataFinal";
             dtpDataFinal.Size = new Size(173, 23);
@@ -195,7 +195,7 @@
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(232, 27);
             btnCadastrar.TabIndex = 4;
-            btnCadastrar.Text = "Cadastrar Funcionário";
+            btnCadastrar.Text = "Cadastrar Ticket";
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
